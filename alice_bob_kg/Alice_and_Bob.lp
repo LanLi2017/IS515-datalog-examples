@@ -1,4 +1,4 @@
-
+% Extensional Database = Set of Facts: 
 % The FACTS (aka "triple") in the knowledge graph: 
 e("ML",exhibited_at,"LOU").
 e("B",friend_of,"Alice").
@@ -18,6 +18,9 @@ has_in_edge(X) :- e(_,_,X).
 % The vertices of the graph:
 v(X) :- has_out_edge(X).
 v(X) :- has_in_edge(X).
+
+parent(X,F) :-  father(X, F).
+parent(X,M) :- mother(X,M).
 
 % The labels of the graph:
 label(L) :- e(_,L,_).
